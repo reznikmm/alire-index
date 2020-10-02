@@ -1,0 +1,28 @@
+description = "Jupyter Kernel for Ada"
+name = "jupyter_kernel"
+version = "1.0.0"
+website = "https://github.com/reznikmm/jupyter/"
+authors = ["Max Reznik"]
+licenses = ["BSD 3-Clauses"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+project-files = ["gnat/jupyter_ada_kernel.gpr", "gnat/jupyter_ada_driver.gpr"]
+tags = ["jupyter", "notebook", "kernel"]
+
+# executables = ["ada_kernel", "ada_driver"]
+
+notes = "To run: cd jupyter_kernel*\n ln -s ./alire/build/.objs . \n PATH=$PATH:$PWD/alire/build/.objs/driver JUPYTER_PATH=$PWD jupyter-notebook --debug"
+
+#[gpr-set-externals]
+#LIBRARY_TYPE = "relocatable"
+#[environment]
+#LIBRARY_TYPE.set = "relocatable"
+
+[[depends-on]]
+matreshka_league = "any"
+spawn = "any"
+zeromq_ada = "any"
+
+[origin]
+url = "git+https://github.com/reznikmm/jupyter"
+commit = "362c84813f35ecf4a0ca9ec72df484e758ff2865"
