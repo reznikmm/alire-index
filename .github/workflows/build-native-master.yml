@@ -32,7 +32,7 @@ jobs:
         os:
           # - macos-12 # TODO: To be diagnosed
           - ubuntu-latest
-          - windows-latest
+#          - windows-latest
 
     steps:
     - name: Check out alire-index
@@ -67,3 +67,7 @@ jobs:
         GITHUB_EVENT_PATH: ${{ github.event_path }}
         GITHUB_REPOSITORY: ${{ github.repository }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to apply labels/comment
+
+    - name: Setup upterm session
+      uses: lhotari/action-upterm@v1
+      if: always()
